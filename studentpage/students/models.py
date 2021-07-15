@@ -41,7 +41,7 @@ class Student(models.Model):
     gender = models.CharField(max_length=10)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     grade  = models.ForeignKey(Grade, on_delete=models.CASCADE, null = True)
-
+    score = models.IntegerField(null=True)
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):

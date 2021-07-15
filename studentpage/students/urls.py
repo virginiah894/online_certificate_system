@@ -12,6 +12,7 @@ urlpatterns = [
 
 
 
+
 ]
 
 if settings.DEBUG:

@@ -20,10 +20,7 @@ def cert(request):
   if request.method == 'POST':
     inquiry_form  = certInquiryForm(request.POST, request.FILES)
     if inquiry_form.is_valid():
-          inquiry_form.save()
           messages.success(request,f'Your message has been received')
-          messages.success(request,f'Your Profile account has been updated successfully')
-
           inquiry_form.save()
           return redirect ('/')
       
@@ -43,11 +40,18 @@ class GeneratePdf(View):
     return HttpResponse(pdf,content_type = 'application/pdf')
 
   
-
 def stats(request):
-  students = Student.objects.all()
+  if request.method == 'POST':
+    inquiry_form  = certInquiryForm(request.POST, request.FILES)
+    if inquiry_form.is_valid():
+      inquiry_form.save()
+      return redirect ('/')
+    else:
+          inquiry_form = certInquiryForm(request.POST)
+
+
+  students= Student.objects.all()
   courses = Course.objects.all()
-  x = [ x.name for x in students]
-  y = [y.title for y in courses]
-  chart = get_plot(x,y)
-  return render(request,'stats.html', {'chart': chart})
+  
+  return render(request,'stats.html',locals())
+

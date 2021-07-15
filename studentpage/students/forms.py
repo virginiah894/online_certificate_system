@@ -11,4 +11,4 @@ from  crispy_forms.layout import Submit,Layout,Field
 class certInquiryForm(forms.ModelForm):
     class Meta:
         model = Student
-        fields  = ['name', 'email','course','image' ,'grade']
+        fields  = ['name', 'email','course','image' ,'score']
