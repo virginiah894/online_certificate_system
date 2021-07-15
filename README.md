@@ -1,3 +1,8 @@
+# Application Name
+'''
+ Online Certificate System
+'''
+
 ## Author
 [Virginiah Periah](https://github.com/virginiah894)
 ##  Features
@@ -49,7 +54,7 @@ As a user of the web application you will be able to:
 * HTML
 * Bootstrap
 
-This application is developed using [Python3.6](https://www.python.org/doc/), [Django](https://www.djangoproject.com/), [HTML](https://getbootstrap.com/) and [Bootstrap](https://getbootstrap.com/)[chart.js](https://www.chartjs.org/docs/latest/)
+This application is developed using [Python3.6](https://www.python.org/doc/), [Django](https://www.djangoproject.com/), [HTML](https://getbootstrap.com/),[Bootstrap](https://getbootstrap.com/) and [chart.js](https://www.chartjs.org/docs/latest/)
 
 ## Future Implementation
 1. Django Authentication System
