@@ -6,6 +6,11 @@ from django.conf import settings
 
 urlpatterns = [
     path('',views.home,name='home'),
+    path('cert/',views.cert,name='cert'),
+    path('stats/',views.stats,name='stats'),
+
+
+
 
 ]
 
