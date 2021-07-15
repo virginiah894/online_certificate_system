@@ -55,3 +55,9 @@ def stats(request):
   
   return render(request,'stats.html',locals())
 
+def cert_stats(request):
+    certs = Certificate.objects.all()
+    cert_count = Certificate.objects.all().count()
+
+    return render (request,'certstats.html',locals())
+

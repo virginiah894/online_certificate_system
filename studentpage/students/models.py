@@ -29,7 +29,7 @@ class Grade(models.Model):
 
 
     @classmethod
-    def all_courses(cls):
+    def all_grades(cls):
         grades = cls.objects.all()
         return grades
 
@@ -52,4 +52,27 @@ class Student(models.Model):
     def all_students(cls):
         students = cls.objects.all()
         return students
+
+class Certificate(models.Model):
+    quali = models.CharField(max_length=89, null=True)
+    name = models.ForeignKey(Student, on_delete=models.CASCADE, null= True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True)
+    grade = models.ForeignKey(Grade, on_delete=models.CASCADE, null= True)
+    number = models.IntegerField(null=True)
+
+
+    def __str__(self):
+        if self is not None:
+            return self.quali
+
+
+    @classmethod
+    def all_certs(cls):
+        certs = cls.objects.all()
+        return certs
+    
+    @classmethod
+    def count_certs(cls):
+        count_certs = cls.objects.all().count()
+        return count_certs
 
